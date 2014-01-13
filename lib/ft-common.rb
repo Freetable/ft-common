@@ -4,8 +4,6 @@ class Freetable
 	RETURNFAIL    = '{"result": "0"}'
 	RETURNSUCCESS = '{"result": "1"}'
 
-  @@logger = Logger.new()
-
 	def self.validate( values, types )
 	  fail = false
   	bake = []
@@ -34,7 +32,7 @@ class Freetable
         when 'skip'
           1
         else
-          @@logger.warn('Validate type not found: '+type)
+          Logger.new.warn('Validate type not found: '+type)
           fail = true
     end
   end
