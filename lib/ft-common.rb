@@ -16,7 +16,7 @@ class Freetable
       	when 'uuid'
         	fail = true if val !~ /^[\h]{8}-[\h]{4}-[\h]{4}-[\h]{4}-[\h]{12}$/
       	when 'integer'
-        	fail = true if val.first.to_i == val
+        	fail = true if val.to_i != val
       	when 'password'
         	fail = true if val !~ /^[0-9a-f]{128}$/
 				when 'username'
