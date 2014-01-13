@@ -25,7 +25,7 @@ class Freetable
 					fail = true if myeval.first !~ /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
     end
   end
-	return fail
+	return !fail
 	end
 
 end
