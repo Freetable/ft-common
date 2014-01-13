@@ -11,18 +11,18 @@ class Freetable
   		bake.push([values[c], types[c]])
   	end
 
-  	bake.each do |myeval|
-    	case myeval.last
+  	bake.each do |val,type|
+    	case type
       	when 'uuid'
-        	fail = true if myeval.first !~ /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+        	fail = true if val !~ /^[\h]{8}-[\h]{4}-[\h]{4}-[\h]{4}-[\h]{12}$/
       	when 'integer'
-        	fail = true if myeval.first.to_i == myeval.first
+        	fail = true if val.first.to_i == val
       	when 'password'
-        	fail = true if myeval.first !~ /^[0-9a-f]{128}$/
+        	fail = true if val !~ /^[0-9a-f]{128}$/
 				when 'username'
-					fail = true if myeval.first =~ /\'|\"/
+					fail = true if val =~ /\'|\"/
 				when 'email'
-					fail = true if myeval.first !~ /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+					fail = true if val !~ /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
     end
   end
 	return !fail
