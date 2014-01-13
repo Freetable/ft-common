@@ -31,6 +31,9 @@ class Freetable
           fail = true if val !~ /^[\h]{128}$/
         when 'skip'
           1
+        else
+          logger.info('Validate type not found: '+type)
+          fail = true
     end
   end
 	return !fail
