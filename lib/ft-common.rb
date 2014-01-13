@@ -4,7 +4,7 @@ class Freetable
 	RETURNFAIL    = '{"result": "0"}'
 	RETURNSUCCESS = '{"result": "1"}'
 
-	def validate( values, types )
+	def self.validate( values, types )
 	  fail = false
   	bake = []
   	(0..values.length).each do |c|
