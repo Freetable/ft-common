@@ -32,7 +32,7 @@ class Freetable
         when 'skip'
           1
         else
-          logger.info('Validate type not found: '+type)
+          log.warn('Validate type not found: '+type)
           fail = true
     end
   end
