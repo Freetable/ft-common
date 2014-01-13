@@ -32,7 +32,7 @@ class Freetable
         when 'skip'
           1
         else
-          Logger.new(STDERR).warn('Validate type not found: '+type)
+          $Logger.warn('Validate type not found: '+type)
           fail = true
     end
   end
