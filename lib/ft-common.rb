@@ -1,4 +1,8 @@
-class Freetable
+class Freetable < Sinatra::Base
+
+  configure :production, :development do
+    enable :logging
+  end
 
 	FUNCTIONFAIL  = '{"result": "-0"}'
 	RETURNFAIL    = '{"result": "0"}'
@@ -32,7 +36,7 @@ class Freetable
         when 'skip'
           1
         else
-          log.warn('Validate type not found: '+type)
+          logger.warn('Validate type not found: '+type)
           fail = true
     end
   end
