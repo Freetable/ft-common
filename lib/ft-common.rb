@@ -32,7 +32,7 @@ class Freetable
         when 'skip'
           1
         else
-          Sinatra::Logger::Helpers.warn('Validate type not found: '+type)
+          Sinatra::Logger::Helpers.warn('error')
           fail = true
     end
   end
