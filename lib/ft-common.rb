@@ -4,7 +4,7 @@ class Freetable
 	RETURNFAIL    = '{"result": "0"}'
 	RETURNSUCCESS = '{"result": "1"}'
 
-	def self.validate( values, types )
+	def self.validate( values, types, log )
 	  fail = false
   	bake = []
   	(0..values.length).each do |c|
@@ -32,7 +32,7 @@ class Freetable
         when 'skip'
           1
         else
-          Sinatra::Logger::Helpers.warn('error')
+          log.warn('Invalid type: '+type)
           fail = true
     end
   end
