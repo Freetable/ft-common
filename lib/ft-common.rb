@@ -32,7 +32,7 @@ class Freetable
         when 'skip'
           1
         else
-          log.warn('Invalid type: '+type)
+          log.warn('Invalid type')
           fail = true
     end
   end
