@@ -31,11 +31,6 @@ class Freetable
           fail = true if val !~ /^[\h]{128}$/
         when 'skip'
           1
-        else
-          log.warn('Invalid type')
-          log.warn(values.to_json)
-          log.warn(types.to_json)
-          fail = true
     end
   end
 	return !fail
